@@ -1,0 +1,62 @@
+# MARK Marketing Context
+
+This workspace uses the **MARK (Marketing Agentic Resource Kit)** methodology for AI-assisted marketing.
+
+## Company Information
+
+- **Company:** {company_name}
+- **Industry:** {industry}
+- **User Role:** {user_role}
+
+## Philosophy
+
+MARK is designed to **guide your best thinking**, not replace it. The AI agents provide structured workflows that extract your expertise and validate your decisions.
+
+- **AI guides, you decide** - Structured processes help extract YOUR best marketing thinking
+- **Human-in-the-loop always** - Manual handoffs by design
+- **Adversarial review** - Critical evaluation before anything high-stakes goes live
+
+## Available Marketing Agents
+
+| Agent | Name | Description | Key Triggers |
+|-------|------|-------------|--------------|
+| PMM | Parker | Product marketing: messaging, positioning, sales enablement | `/messaging`, `/positioning`, `/battlecard`, `/one-pager` |
+| Content | Casey | Content marketing: blog, whitepapers, thought leadership | `/blog`, `/whitepaper`, `/content-strategy` |
+| Demand | Dana | Demand gen: campaigns, email sequences, lead nurture | `/campaign-strategy`, `/email-sequence` |
+| Customer | Cameron | Customer marketing: case studies, advocacy | `/case-study`, `/customer-research` |
+| Events | Ellis | Event marketing: webinars, conferences | `/webinar`, `/event-launch` |
+| CMO | Morgan | Strategic direction: portfolio, planning | `/portfolio-review`, `/planning` |
+| Critic | Quinn | Quality assurance: fact-checking, review | `/asset-review`, `/fact-check` |
+| Coordinator | Riley | Cross-functional: stakeholders, coordination | `/stakeholder-update`, `/cross-functional` |
+
+## Marketing Phases
+
+| Phase | Purpose | Key Workflows |
+|-------|---------|---------------|
+| **1. Intelligence** | Understand the landscape | `/competitor-analysis`, `/customer-research`, `/trend-analysis`, `/win-loss` |
+| **2. Strategy** | Set direction | `/messaging`, `/positioning`, `/gtm-strategy`, `/persona`, `/content-strategy` |
+| **3. Creation** | Build assets | `/battlecard`, `/one-pager`, `/case-study`, `/blog`, `/whitepaper`, `/email-sequence` |
+| **4. Activation** | Enable and measure | `/launch`, `/enablement`, `/campaign-launch`, `/asset-review` |
+
+## Artifact Locations
+
+| Type | Location | Description |
+|------|----------|-------------|
+| Intelligence | `{artifacts_path}/intelligence/` | Competitive intel, research, win/loss |
+| Strategy | `{artifacts_path}/strategy/` | Messaging, positioning, GTM plans |
+| Assets | `{artifacts_path}/assets/` | Battlecards, one-pagers, content |
+| Campaigns | `{artifacts_path}/campaigns/` | Campaign plans, launch checklists |
+
+## Quick Start
+
+1. **Create a messaging framework:** `/messaging`
+2. **Build a competitive battlecard:** `/battlecard`
+3. **Create a sales one-pager:** `/one-pager`
+4. **Review an asset for quality:** `/asset-review`
+
+## Best Practices
+
+1. **Start with intelligence** - Understand the landscape before creating strategy
+2. **Document decisions** - Strategy artifacts provide context for creation
+3. **Use the Critic** - Run `/asset-review` before publishing anything high-stakes
+4. **Iterate in drafts** - Create multiple versions before finalizing

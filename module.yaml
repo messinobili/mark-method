@@ -1,0 +1,91 @@
+code: "mkm"
+name: "MARK Marketing Module"
+description: "Marketing Agentic Resource Kit - AI-driven marketing methodology for B2B SaaS teams"
+version: "1.0.0"
+defaultSelected: true
+
+# Configuration prompts (in order)
+prompts:
+  platform:
+    type: "select"
+    message: "Which AI assistant are you using?"
+    options:
+      - label: "Claude Code"
+        value: "claude"
+      - label: "Gemini CLI"
+        value: "gemini"
+      - label: "Both"
+        value: "both"
+    default: "claude"
+
+  company_name:
+    type: "text"
+    message: "What company are you creating marketing for?"
+    default: ""
+    required: true
+
+  user_role:
+    type: "select"
+    message: "What is your role?"
+    options:
+      - label: "CMO"
+        value: "cmo"
+      - label: "PMM"
+        value: "pmm"
+      - label: "Content Marketing"
+        value: "content"
+      - label: "Demand Gen"
+        value: "demand"
+      - label: "Customer Marketing"
+        value: "customer"
+      - label: "Events"
+        value: "events"
+      - label: "Other"
+        value: "other"
+    default: "pmm"
+
+  industry:
+    type: "select"
+    message: "What industry?"
+    options:
+      - label: "B2B SaaS"
+        value: "b2b-saas"
+      - label: "Enterprise Software"
+        value: "enterprise"
+      - label: "Consumer Tech"
+        value: "consumer"
+      - label: "Fintech"
+        value: "fintech"
+      - label: "Healthcare Tech"
+        value: "healthtech"
+      - label: "Other"
+        value: "other"
+    default: "b2b-saas"
+
+  artifacts_path:
+    type: "text"
+    message: "Where should marketing artifacts be saved?"
+    default: "marketing"
+
+# Directories to create
+directories:
+  - "{artifacts_path}/intelligence"
+  - "{artifacts_path}/strategy"
+  - "{artifacts_path}/assets"
+  - "{artifacts_path}/campaigns"
+
+# Files to generate
+files:
+  - source: "src/templates/CLAUDE.md.template"
+    destination: "CLAUDE.md"
+    condition: "platform == 'claude' || platform == 'both'"
+  - source: "src/templates/GEMINI.md.template"
+    destination: "GEMINI.md"
+    condition: "platform == 'gemini' || platform == 'both'"
+
+# Skills to copy
+skills:
+  source: "src/skills/"
+  destinations:
+    claude: ".claude/skills/mark/"
+    gemini: ".gemini/skills/mark/"
