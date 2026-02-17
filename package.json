@@ -32,11 +32,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/alemane88/mark-method.git"
+    "url": "https://github.com/messinobili/mark-method.git"
   },
-  "homepage": "https://github.com/alemane88/mark-method#readme",
+  "homepage": "https://github.com/messinobili/mark-method#readme",
   "bugs": {
-    "url": "https://github.com/alemane88/mark-method/issues"
+    "url": "https://github.com/messinobili/mark-method/issues"
   },
   "dependencies": {
     "commander": "^12.0.0",
