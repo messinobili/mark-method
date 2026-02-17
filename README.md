@@ -294,3 +294,4 @@ Inspired by [BMAD Method](https://github.com/bmad-code-org/BMAD-METHOD) and the 
 ---
 
 Built for B2B SaaS marketing teams who want AI to amplify their expertise, not replace it.
+# mark-method
