@@ -197,7 +197,11 @@ Identify:
 **Focus Areas:** [What to track]
 ```
 
-**Output:** Save to `marketing/strategy/portfolio-review-[period].md`
+**Output:**
+1. Display the completed portfolio review for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/strategy/portfolio-review-[period].md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created
 
 ---
 
@@ -449,4 +453,8 @@ Plan:
 [Link to market research, competitive analysis, etc.]
 ```
 
-**Output:** Save to `marketing/strategy/marketing-plan-[period].md`
+**Output:**
+1. Display the completed marketing plan for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/strategy/marketing-plan-[period].md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created

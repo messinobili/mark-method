@@ -11,6 +11,6 @@ Now execute the /case-study workflow as defined in your skill. Create customer c
 4. Draft Creation with quotes and metrics
 5. Approval Process tracking
 
-Save output to: marketing/assets/case-study-[customer].md
+When complete, follow the Output workflow in your skill definition to save the file.
 
 Begin by asking the user about the customer they want to feature."""

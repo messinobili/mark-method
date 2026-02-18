@@ -10,6 +10,6 @@ Now execute the /cross-functional workflow as defined in your skill. Create coor
 3. Communication Plan
 4. Timeline & Milestones
 
-Save output to: marketing/assets/cross-functional-[project].md
+When complete, follow the Output workflow in your skill definition to save the file.
 
 Begin by asking the user about the project or initiative that requires cross-functional coordination."""

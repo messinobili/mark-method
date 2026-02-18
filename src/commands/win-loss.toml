@@ -9,6 +9,6 @@ Now execute the /win-loss workflow as defined in your skill. Analyze deal outcom
 - Pattern analysis (common win themes, loss themes, competitive trends)
 - Recommendations by team
 
-Save output to: marketing/intelligence/win-loss-[period].md
+When complete, follow the Output workflow in your skill definition to save the file.
 
 Begin by asking the user about the deals or time period they want to analyze."""

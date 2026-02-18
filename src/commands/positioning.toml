@@ -6,6 +6,6 @@ Read your skill definition:
 
 Now execute the /positioning workflow as defined in your skill. Guide the user through creating a positioning document that differentiates against specific competitors.
 
-Save output to: marketing/strategy/positioning-vs-[competitor].md
+When complete, follow the Output workflow in your skill definition to save the file.
 
 Begin by asking the user which competitor(s) they want to position against."""

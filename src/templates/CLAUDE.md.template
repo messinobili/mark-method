@@ -55,10 +55,31 @@ MARK is designed to **guide your best thinking**, not replace it. The AI agents 
 3. **Create a sales one-pager:** `/one-pager`
 4. **Review an asset for quality:** `/asset-review`
 
+## How File Creation Works
+
+MARK agents create files **explicitly with user confirmation** - they do not save files automatically or implicitly. Here's the workflow:
+
+1. **Agent creates content** - The agent generates the complete output and displays it for your review
+2. **User confirms save** - The agent asks: "Ready to save? I'll create the file at `[path]`"
+3. **Agent creates file** - Upon your confirmation, the agent explicitly creates the file using its file creation capability
+4. **Agent confirms completion** - The agent reports the actual path of the created file
+
+**Why this matters:**
+- You always see the content before it's saved
+- No files are created without your explicit approval
+- You can request changes before saving
+- You know exactly where files are being created
+
+**For multi-asset workflows** (like `/enablement`):
+- The agent lists all files that will be created
+- You provide a single confirmation to batch-create all files
+- The agent reports all created files when complete
+
 ## Best Practices
 
 1. **Start with intelligence** - Understand the landscape before creating strategy
 2. **Document decisions** - Strategy artifacts provide context for creation
 3. **Use the Critic** - Run `/asset-review` before publishing anything high-stakes
 4. **Iterate in drafts** - Create multiple versions before finalizing
+5. **Confirm file paths** - Review the save location before confirming file creation
 <!-- END MARK METHOD -->

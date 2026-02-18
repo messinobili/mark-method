@@ -12,6 +12,6 @@ Now execute the /messaging workflow as defined in your skill. Guide the user thr
 4. Differentiation Check - Validate uniqueness, provability, and buyer relevance
 5. Adversarial Review - Challenge each claim
 
-Save output to: marketing/strategy/messaging-framework-[topic].md
+When complete, follow the Output workflow in your skill definition to save the file.
 
 Begin by asking the user what product or feature they want to create messaging for."""

@@ -117,7 +117,11 @@ Include:
 - [Source 2]
 ```
 
-**Output:** Save to `marketing/assets/blog-[slug].md`
+**Output:**
+1. Display the completed blog post draft for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/assets/blog-[slug].md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created
 
 ---
 
@@ -262,7 +266,11 @@ For each section:
 - Page Y: [Diagram suggestion]
 ```
 
-**Output:** Save to `marketing/assets/whitepaper-[topic].md`
+**Output:**
+1. Display the completed whitepaper draft for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/assets/whitepaper-[topic].md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created
 
 ---
 
@@ -402,7 +410,11 @@ Create:
 - [Q2]: [Major piece]
 ```
 
-**Output:** Save to `marketing/strategy/content-strategy.md`
+**Output:**
+1. Display the completed content strategy for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/strategy/content-strategy.md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created
 
 ---
 
@@ -507,4 +519,8 @@ Assess:
 - [Long-term plays]
 ```
 
-**Output:** Save to `marketing/intelligence/trend-analysis-[topic].md`
+**Output:**
+1. Display the completed trend analysis for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/intelligence/trend-analysis-[topic].md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created

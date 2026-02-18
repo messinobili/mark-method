@@ -13,6 +13,6 @@ Now execute the /persona workflow as defined in your skill. Define target buyer 
 6. Information Sources
 7. Messaging Implications
 
-Save output to: marketing/strategy/persona-[name].md
+When complete, follow the Output workflow in your skill definition to save the file.
 
 Begin by asking the user which buyer persona they want to define."""

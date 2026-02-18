@@ -103,6 +103,29 @@ marketing/
 └── campaigns/      # Campaign plans, launch checklists
 ```
 
+### How File Creation Works
+
+MARK agents create files **explicitly with user confirmation**. Files are never saved automatically or silently.
+
+**The workflow:**
+1. Agent generates the complete output and displays it for review
+2. Agent asks: "Ready to save? I'll create the file at `[path]`"
+3. Upon your confirmation, the agent creates the file
+4. Agent confirms the actual path of the created file
+
+**Why explicit file creation?**
+- You always see content before it's saved
+- No files are created without your approval
+- You can request changes before saving
+- You know exactly where files are being created
+
+**Multi-asset workflows** (like `/enablement`) list all files that will be created and batch-create them with a single confirmation.
+
+**Troubleshooting:**
+- If a file wasn't created, the agent didn't receive confirmation to save
+- Verify the target directory exists (MARK creates the `marketing/` structure on install)
+- Check that your AI assistant has file creation permissions
+
 ## All Workflows
 
 ### PMM (Parker)
@@ -251,7 +274,11 @@ To add a new workflow, add a section to the appropriate agent's SKILL.md:
 
 [Workflow instructions...]
 
-**Output:** Save to `marketing/[folder]/[filename].md`
+**Output:**
+1. Display the completed content for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/[folder]/[filename].md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created
 ```
 
 Then add the trigger to the frontmatter:
@@ -294,4 +321,3 @@ Inspired by [BMAD Method](https://github.com/bmad-code-org/BMAD-METHOD) and the 
 ---
 
 Built for B2B SaaS marketing teams who want AI to amplify their expertise, not replace it.
-# mark-method

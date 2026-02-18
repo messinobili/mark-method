@@ -12,6 +12,6 @@ Now execute the /campaign-strategy workflow as defined in your skill. Create com
 5. Messaging Framework
 6. Measurement Plan
 
-Save output to: marketing/campaigns/campaign-[name]-strategy.md
+When complete, follow the Output workflow in your skill definition to save the file.
 
 Begin by asking the user about their campaign objective."""

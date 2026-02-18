@@ -158,7 +158,11 @@ Define:
 *Questions? Reply to this update or reach out to [contact].*
 ```
 
-**Output:** Save to `marketing/assets/stakeholder-update-[date].md`
+**Output:**
+1. Display the completed stakeholder update for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/assets/stakeholder-update-[date].md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created
 
 ---
 
@@ -353,7 +357,11 @@ Create:
 - [Link to relevant docs]
 ```
 
-**Output:** Save to `marketing/assets/cross-functional-[project].md`
+**Output:**
+1. Display the completed coordination document for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/assets/cross-functional-[project].md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created
 
 ---
 

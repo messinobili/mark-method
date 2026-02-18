@@ -10,6 +10,6 @@ Now execute the /campaign-launch workflow as defined in your skill. Create campa
 - Daily/Weekly Tracking
 - Optimization Log
 
-Save output to: marketing/campaigns/campaign-[name]-tracking.md
+When complete, follow the Output workflow in your skill definition to save the file.
 
 Begin by asking the user about the campaign they are launching."""

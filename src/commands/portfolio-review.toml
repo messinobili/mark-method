@@ -10,6 +10,6 @@ Now execute the /portfolio-review workflow as defined in your skill. Review mark
 3. Strategic Priorities (top 3 for next quarter)
 4. Risk Assessment
 
-Save output to: marketing/strategy/portfolio-review-[period].md
+When complete, follow the Output workflow in your skill definition to save the file.
 
 Begin by asking the user about the time period and what aspects of their marketing portfolio they want to review."""

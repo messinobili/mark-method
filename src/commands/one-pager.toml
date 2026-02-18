@@ -6,6 +6,6 @@ Read your skill definition:
 
 Now execute the /one-pager workflow as defined in your skill. Create a product/solution one-pager using the PAS (Problem-Agitate-Solution) framework.
 
-Save output to: marketing/assets/one-pager-[topic].md
+When complete, follow the Output workflow in your skill definition to save the file.
 
 Begin by asking the user what product or solution they want to create a one-pager for, and who the target audience is."""

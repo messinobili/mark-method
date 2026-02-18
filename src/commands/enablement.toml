@@ -10,6 +10,6 @@ Now execute the /enablement workflow as defined in your skill. Create enablement
 3. Rollout Plan
 4. Usage Guidelines
 
-Save output to: marketing/assets/enablement-[topic].md
+When complete, follow the Output workflow in your skill definition to save all files.
 
 Begin by asking the user what topic or launch they need enablement for."""

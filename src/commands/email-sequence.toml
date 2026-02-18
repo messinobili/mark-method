@@ -10,6 +10,6 @@ Now execute the /email-sequence workflow as defined in your skill. Create email 
 3. Email Series (subject lines, purpose, key message, CTA, timing for each)
 4. Exit Criteria
 
-Save output to: marketing/campaigns/email-sequence-[name].md
+When complete, follow the Output workflow in your skill definition to save the file.
 
 Begin by asking the user about the goal of this email sequence and what triggers entry."""

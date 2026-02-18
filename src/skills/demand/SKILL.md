@@ -200,7 +200,11 @@ Define:
 - Monthly: [What]
 ```
 
-**Output:** Save to `marketing/campaigns/campaign-[name]-strategy.md`
+**Output:**
+1. Display the completed campaign strategy for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/campaigns/campaign-[name]-strategy.md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created
 
 ---
 
@@ -336,7 +340,11 @@ Define:
 | Unsubscribe Rate | < [Target] |
 ```
 
-**Output:** Save to `marketing/campaigns/email-sequence-[name].md`
+**Output:**
+1. Display the completed email sequence for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/campaigns/email-sequence-[name].md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created
 
 ---
 
@@ -446,4 +454,8 @@ Execute and track campaign launch.
 | [Date] | [What changed] | [Why] | [Impact] |
 ```
 
-**Output:** Save to `marketing/campaigns/campaign-[name]-tracking.md`
+**Output:**
+1. Display the completed campaign tracking document for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/campaigns/campaign-[name]-tracking.md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created

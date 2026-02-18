@@ -247,7 +247,11 @@ Attendees will learn:
 - Recommendations for next time:
 ```
 
-**Output:** Save to `marketing/campaigns/webinar-[topic].md`
+**Output:**
+1. Display the completed webinar plan for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/campaigns/webinar-[topic].md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created
 
 ---
 
@@ -452,4 +456,8 @@ Execute event with comprehensive tracking.
 | Pipeline/Spend Ratio | |
 ```
 
-**Output:** Save to `marketing/campaigns/event-[name]-checklist.md`
+**Output:**
+1. Display the completed event execution checklist for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/campaigns/event-[name]-checklist.md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created

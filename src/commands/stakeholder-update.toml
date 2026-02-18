@@ -10,6 +10,6 @@ Now execute the /stakeholder-update workflow as defined in your skill. Create st
 3. Blockers & Risks
 4. Next Steps
 
-Save output to: marketing/assets/stakeholder-update-[date].md
+When complete, follow the Output workflow in your skill definition to save the file.
 
 Begin by asking the user about the update period and key stakeholder audience."""

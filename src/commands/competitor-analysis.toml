@@ -15,6 +15,6 @@ Now execute the /competitor-analysis workflow as defined in your skill. Conduct 
 
 All claims must have sources. Mark unverified items as [UNVERIFIED].
 
-Save output to: marketing/intelligence/competitor-profile-[name].md
+When complete, follow the Output workflow in your skill definition to save the file.
 
 Begin by asking the user which competitor they want to analyze."""

@@ -11,6 +11,6 @@ Now execute the /webinar workflow as defined in your skill. Plan webinar coverin
 4. Execution Checklist
 5. Follow-up Plan
 
-Save output to: marketing/campaigns/webinar-[topic].md
+When complete, follow the Output workflow in your skill definition to save the file.
 
 Begin by asking the user about the webinar topic and target audience."""

@@ -192,7 +192,11 @@ Track:
 - [ ] Final sign-off
 ```
 
-**Output:** Save to `marketing/assets/case-study-[customer].md`
+**Output:**
+1. Display the completed case study draft for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/assets/case-study-[customer].md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created
 
 ---
 
@@ -370,4 +374,8 @@ Prioritize:
 [Raw data summary if relevant]
 ```
 
-**Output:** Save to `marketing/intelligence/customer-insights-[period].md`
+**Output:**
+1. Display the completed customer insight report for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/intelligence/customer-insights-[period].md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created

@@ -75,7 +75,11 @@ Challenge each claim:
 - Is this feature-speak or value language?
 - Is this buyer language or internal jargon?
 
-**Output:** Save to `marketing/strategy/messaging-framework-[topic].md`
+**Output:**
+1. Display the completed messaging framework for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/strategy/messaging-framework-[topic].md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created
 
 ---
 
@@ -108,7 +112,11 @@ Create:
 - Objection handling for their strengths
 - Redirect to our strengths
 
-**Output:** Save to `marketing/strategy/positioning-vs-[competitor].md`
+**Output:**
+1. Display the completed positioning document for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/strategy/positioning-vs-[competitor].md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created
 
 ---
 
@@ -156,7 +164,11 @@ Questions that expose their gaps:
 [If known - include confidence level]
 ```
 
-**Output:** Save to `marketing/assets/battlecard-[competitor].md`
+**Output:**
+1. Display the completed battlecard for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/assets/battlecard-[competitor].md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created
 
 ---
 
@@ -213,7 +225,11 @@ Include:
 [Specific, low-friction CTA]
 ```
 
-**Output:** Save to `marketing/assets/one-pager-[topic].md`
+**Output:**
+1. Display the completed one-pager for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/assets/one-pager-[topic].md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created
 
 ---
 
@@ -236,7 +252,11 @@ Conduct comprehensive competitor analysis.
 - Mark unverified items as [UNVERIFIED]
 - Include confidence levels: Confirmed / Likely / Speculative
 
-**Output:** Save to `marketing/intelligence/competitor-profile-[name].md`
+**Output:**
+1. Display the completed competitor analysis for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/intelligence/competitor-profile-[name].md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created
 
 ---
 
@@ -270,7 +290,11 @@ Develop GTM strategy for a product launch.
 **6. Timeline & Milestones**
 - Key dates and dependencies
 
-**Output:** Save to `marketing/strategy/gtm-[launch-name].md`
+**Output:**
+1. Display the completed GTM strategy for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/strategy/gtm-[launch-name].md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created
 
 ---
 
@@ -312,7 +336,11 @@ Execute a product launch with checklist and tracking.
 - [ ] Retrospective completed
 ```
 
-**Output:** Save to `marketing/campaigns/launch-[name]-checklist.md`
+**Output:**
+1. Display the completed launch checklist for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/campaigns/launch-[name]-checklist.md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created
 
 ---
 
@@ -346,7 +374,17 @@ Create enablement materials and training plan.
 - How to access materials
 - How to provide feedback
 
-**Output:** Save to `marketing/assets/enablement-[topic].md`
+**Output:**
+1. Display the completed enablement materials for user review
+2. List all asset files that will be created:
+   - Master doc: `marketing/assets/enablement-[topic].md`
+   - Battlecard: `marketing/assets/battlecard-[topic].md` (if included)
+   - One-pager: `marketing/assets/one-pager-[topic].md` (if included)
+   - Demo script: `marketing/assets/demo-script-[topic].md` (if included)
+   - Objection guide: `marketing/assets/objections-[topic].md` (if included)
+3. Ask: "Ready to create all files? I'll create the master document plus [N] asset files."
+4. Upon confirmation, batch create ALL files using your file creation capability
+5. Report completion with list of all files created and their paths
 
 ---
 
@@ -368,7 +406,11 @@ Across deals, identify:
 - Competitive trends
 - Recommendations by team (Product, Sales, Marketing)
 
-**Output:** Save to `marketing/intelligence/win-loss-[period].md`
+**Output:**
+1. Display the completed win/loss analysis for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/intelligence/win-loss-[period].md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created
 
 ---
 
@@ -409,4 +451,8 @@ Define target buyer persona.
    - What messages resonate?
    - What language do they use?
 
-**Output:** Save to `marketing/strategy/persona-[name].md`
+**Output:**
+1. Display the completed persona document for user review
+2. Ask: "Ready to save? I'll create the file at `marketing/strategy/persona-[name].md`"
+3. Upon confirmation, create the file using your file creation capability
+4. Confirm file creation with the actual path created

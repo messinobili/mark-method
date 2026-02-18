@@ -11,6 +11,6 @@ Now execute the /blog workflow as defined in your skill. Guide the user through:
 4. Draft Creation (hook, structure, takeaways, conclusion)
 5. SEO Optimization
 
-Save output to: marketing/assets/blog-[slug].md
+When complete, follow the Output workflow in your skill definition to save the file.
 
 Begin by asking the user what topic they want to write about."""
