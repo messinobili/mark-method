@@ -26,12 +26,12 @@ export async function uninstall(options) {
   console.log('\n' + chalk.cyan('The following will be removed:'));
   if (config.platform === 'claude' || config.platform === 'both') {
     console.log('  • .claude/skills/mark/ (skills directory)');
-    console.log('  • CLAUDE.md (context file)');
+    console.log('  • MARK section from CLAUDE.md (other content preserved)');
   }
   if (config.platform === 'gemini' || config.platform === 'both') {
     console.log('  • .gemini/skills/ (skills directory)');
     console.log('  • .gemini/commands/ (command files)');
-    console.log('  • GEMINI.md (context file)');
+    console.log('  • MARK section from GEMINI.md (other content preserved)');
   }
   console.log('  • .mark-config.yaml (configuration)');
   console.log('');
@@ -104,15 +104,15 @@ export async function uninstall(options) {
     }
     s.stop(chalk.green('✓') + ' Skills and commands removed');
 
-    // Remove context files
+    // Remove MARK sections from context files (or delete if MARK is the only content)
     s.start('Removing context files...');
     if (config.platform === 'claude' || config.platform === 'both') {
-      await fs.remove('CLAUDE.md');
+      await removeMarkSection('CLAUDE.md');
     }
     if (config.platform === 'gemini' || config.platform === 'both') {
-      await fs.remove('GEMINI.md');
+      await removeMarkSection('GEMINI.md');
     }
-    s.stop(chalk.green('✓') + ' Context files removed');
+    s.stop(chalk.green('✓') + ' Context files cleaned up');
 
     // Remove config
     s.start('Removing configuration...');
@@ -129,4 +129,47 @@ export async function uninstall(options) {
 
   console.log(chalk.dim(`\nYour marketing artifacts in ${config.artifacts_path}/ were preserved.`));
   console.log(chalk.dim('To reinstall: npx mark-method install\n'));
+}
+
+/**
+ * Remove the MARK section from a context file.
+ * If the file contains only the MARK section, delete it entirely.
+ * If the file contains other content, strip only the MARK section.
+ */
+async function removeMarkSection(filePath) {
+  if (!await fs.pathExists(filePath)) return;
+
+  const content = await fs.readFile(filePath, 'utf-8');
+  const beginMarker = '<!-- BEGIN MARK METHOD -->';
+  const endMarker = '<!-- END MARK METHOD -->';
+
+  const beginIndex = content.indexOf(beginMarker);
+  const endIndex = content.indexOf(endMarker);
+
+  if (beginIndex === -1) {
+    // No MARK markers found — check for legacy installs (pre-marker)
+    if (content.includes('MARK (Marketing Agentic Resource Kit)')) {
+      // Legacy install without markers — remove the whole file only if it looks
+      // like it's entirely MARK content (starts with the MARK header)
+      if (content.trimStart().startsWith('# MARK Marketing Context')) {
+        await fs.remove(filePath);
+      }
+      // Otherwise leave it alone — we can't safely determine boundaries
+    }
+    return;
+  }
+
+  // Strip from beginMarker through endMarker (inclusive)
+  const before = content.substring(0, beginIndex);
+  const after = endIndex !== -1
+    ? content.substring(endIndex + endMarker.length)
+    : '';
+
+  const remaining = (before + after).replace(/\n{3,}/g, '\n\n').trim();
+
+  if (remaining.length === 0) {
+    await fs.remove(filePath);
+  } else {
+    await fs.writeFile(filePath, remaining + '\n');
+  }
 }

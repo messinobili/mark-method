@@ -278,23 +278,41 @@ async function generateContextFiles(config) {
     artifacts_path: config.artifacts_path
   };
 
-  // Generate CLAUDE.md
+  // Generate CLAUDE.md (append or create)
   if (config.platform === 'claude' || config.platform === 'both') {
     const claudeTemplatePath = path.join(packageRoot, 'src/templates/CLAUDE.md.template');
     if (await fs.pathExists(claudeTemplatePath)) {
       let template = await fs.readFile(claudeTemplatePath, 'utf-8');
       template = replaceTemplateVars(template, templateVars);
-      await fs.writeFile('CLAUDE.md', template);
+
+      const claudeMdPath = 'CLAUDE.md';
+      if (await fs.pathExists(claudeMdPath)) {
+        const existing = await fs.readFile(claudeMdPath, 'utf-8');
+        if (!existing.includes('<!-- BEGIN MARK METHOD -->')) {
+          await fs.appendFile(claudeMdPath, '\n\n' + template);
+        }
+      } else {
+        await fs.writeFile(claudeMdPath, template);
+      }
     }
   }
 
-  // Generate GEMINI.md
+  // Generate GEMINI.md (append or create)
   if (config.platform === 'gemini' || config.platform === 'both') {
     const geminiTemplatePath = path.join(packageRoot, 'src/templates/GEMINI.md.template');
     if (await fs.pathExists(geminiTemplatePath)) {
       let template = await fs.readFile(geminiTemplatePath, 'utf-8');
       template = replaceTemplateVars(template, templateVars);
-      await fs.writeFile('GEMINI.md', template);
+
+      const geminiMdPath = 'GEMINI.md';
+      if (await fs.pathExists(geminiMdPath)) {
+        const existing = await fs.readFile(geminiMdPath, 'utf-8');
+        if (!existing.includes('<!-- BEGIN MARK METHOD -->')) {
+          await fs.appendFile(geminiMdPath, '\n\n' + template);
+        }
+      } else {
+        await fs.writeFile(geminiMdPath, template);
+      }
     }
   }
 }

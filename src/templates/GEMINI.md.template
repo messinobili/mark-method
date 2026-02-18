@@ -1,3 +1,4 @@
+<!-- BEGIN MARK METHOD -->
 # MARK Marketing Context
 
 This workspace uses the **MARK (Marketing Agentic Resource Kit)** methodology for AI-assisted marketing.
@@ -60,3 +61,4 @@ MARK is designed to **guide your best thinking**, not replace it. The AI agents 
 2. **Document decisions** - Strategy artifacts provide context for creation
 3. **Use the Critic** - Run `/asset-review` before publishing anything high-stakes
 4. **Iterate in drafts** - Create multiple versions before finalizing
+<!-- END MARK METHOD -->
