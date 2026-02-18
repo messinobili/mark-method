@@ -8,7 +8,12 @@
 import { confirm, intro, outro, spinner, isCancel } from '@clack/prompts';
 import chalk from 'chalk';
 import fs from 'fs-extra';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import yaml from 'yaml';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export async function uninstall(options) {
   intro(chalk.cyan.bold('MARK Uninstall'));
@@ -29,8 +34,16 @@ export async function uninstall(options) {
     console.log('  • MARK section from CLAUDE.md (other content preserved)');
   }
   if (config.platform === 'gemini' || config.platform === 'both') {
-    console.log('  • .gemini/skills/ (skills directory)');
-    console.log('  • .gemini/commands/ (command files)');
+    const manifest = config.installed_files || [];
+    const geminiManifest = manifest.filter(p => p.startsWith('.gemini/'));
+    if (geminiManifest.length > 0) {
+      for (const filePath of geminiManifest) {
+        console.log(`  • ${filePath}`);
+      }
+    } else {
+      console.log('  • MARK skills from .gemini/skills/');
+      console.log('  • MARK commands from .gemini/commands/');
+    }
     console.log('  • MARK section from GEMINI.md (other content preserved)');
   }
   console.log('  • .mark-config.yaml (configuration)');
@@ -73,20 +86,48 @@ export async function uninstall(options) {
       }
     }
     if (config.platform === 'gemini' || config.platform === 'both') {
-      // Remove MARK agent skills from .gemini/skills/
-      const geminiAgents = ['pmm', 'content', 'demand', 'customer', 'events', 'cmo', 'critic', 'coordinator'];
-      for (const agent of geminiAgents) {
-        await fs.remove(`.gemini/skills/${agent}`);
+      const manifest = config.installed_files || [];
+      const geminiManifest = manifest.filter(p => p.startsWith('.gemini/'));
+
+      if (geminiManifest.length > 0) {
+        // Manifest-based removal — only remove files we installed
+        for (const filePath of geminiManifest) {
+          await fs.remove(filePath);
+        }
+      } else {
+        // Legacy fallback for pre-manifest installs
+        const geminiAgents = ['pmm', 'content', 'demand', 'customer', 'events', 'cmo', 'critic', 'coordinator'];
+        for (const agent of geminiAgents) {
+          await fs.remove(`.gemini/skills/${agent}`);
+          await fs.remove(`.gemini/skills/${agent}-mark-method`);
+        }
+
+        // Remove only MARK command files (NOT the whole directory)
+        const packageRoot = path.resolve(__dirname, '../../../');
+        const commandsSource = path.join(packageRoot, 'src/commands');
+        if (await fs.pathExists(commandsSource) && await fs.pathExists('.gemini/commands')) {
+          const sourceCommands = await fs.readdir(commandsSource);
+          for (const cmd of sourceCommands) {
+            const ext = path.extname(cmd);
+            const baseName = path.basename(cmd, ext);
+            await fs.remove(`.gemini/commands/${cmd}`);
+            await fs.remove(`.gemini/commands/${baseName}-mark-method${ext}`);
+          }
+        }
       }
 
-      // Remove MARK commands from .gemini/commands/
-      await fs.remove('.gemini/commands');
-
-      // Clean up empty .gemini directory
+      // Clean up empty .gemini subdirectories and .gemini itself
+      for (const subdir of ['.gemini/skills', '.gemini/commands']) {
+        if (await fs.pathExists(subdir)) {
+          const remaining = await fs.readdir(subdir);
+          if (remaining.filter(f => !f.startsWith('.')).length === 0) {
+            await fs.remove(subdir);
+          }
+        }
+      }
       const geminiDir = '.gemini';
       if (await fs.pathExists(geminiDir)) {
         const remaining = await fs.readdir(geminiDir);
-        // Check if only empty directories remain
         let isEmpty = true;
         for (const item of remaining) {
           if (item.startsWith('.')) continue;
